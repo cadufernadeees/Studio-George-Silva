@@ -152,7 +152,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 .intro img{width:min(70vw,520px);height:auto;animation:introIn 1.2s var(--ease)}
 @keyframes introOut{to{opacity:0;visibility:hidden}}@keyframes introIn{from{opacity:0;transform:scale(.94)}}
 @media(prefers-reduced-motion:reduce){.intro{display:none}}
-.hero-bg{position:absolute;inset:0;background:url('Hero.webp') center center/cover no-repeat;filter:grayscale(.35);transform:scale(1.06);animation:kb 24s ease-in-out infinite alternate}
+.hero-bg{position:absolute;inset:0;background:url('Hero.webp') center 68%/cover no-repeat;filter:grayscale(.35);transform:none;animation:none}
 @media(max-width:819px){.hero-bg{background-image:url('George-hero.webp');background-position:center center;background-size:100% auto;background-color:#080809;transform:none;animation:none;filter:grayscale(.18)}.hero-bg::after{background:linear-gradient(180deg,rgba(8,8,9,.38),rgba(8,8,9,.48) 48%,rgba(8,8,9,.9) 100%),radial-gradient(ellipse at 78% 58%,rgba(145,28,28,.2),transparent 52%)}}
 .ph img[data-missing]{opacity:0}
 .ph{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/3;background:var(--surface)}

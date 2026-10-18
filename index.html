@@ -15,6 +15,13 @@
 <link rel="preload" as="image" href="George-hero.webp" media="(max-width: 819px)">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Studio George Silva","description":"Jiu-Jítsu Brasileiro, No-Gi e defesa pessoal","telephone":"+55 24 98807-5539","address":{"@type":"PostalAddress","streetAddress":"Rua Manoel Cabral de Mello, 658, Bairro Delícia","addressLocality":"Areal","addressRegion":"RJ","addressCountry":"BR"}}</script>
+<script>
+(function(){
+  if('scrollRestoration' in history)history.scrollRestoration='manual';
+  if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+  window.addEventListener('pageshow',function(){window.scrollTo(0,0)});
+})();
+</script>
 <style>
 :root{
   --bg:#0b0b0c;--surface:#131315;--text:#f4f4f5;--soft:#b4b4bb;--line:rgba(255,255,255,.1);
@@ -317,7 +324,7 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
 <div id="progress" aria-hidden="true"></div>
 <header id="top">
   <div class="wrap bar">
-    <a class="logo" href="#inicio" aria-label="Studio George Silva, início"><img src="Studio_George_Silva_Logo_Sem_Fundo.png" alt="Logo do Studio George Silva"></a>
+    <a class="logo" href="#inicio" aria-label="Voltar ao topo do site"><img src="Studio_George_Silva_Logo_Sem_Fundo.png" alt="Logo do Studio George Silva"></a>
     <nav aria-label="Navegação principal">
       <a href="#beneficios">Benefícios</a><a href="#aulas">Aulas</a><a href="#studio">O Studio</a><a href="#depoimentos">Alunos</a><a href="#shop">Shop</a><a href="#contato">Contato</a>
     </nav>
@@ -504,6 +511,7 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
 (function(){
   var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
   var header=$('#top'),prog=$('#progress'),sticky=$('#sticky');
+  $('.logo').addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});if(location.hash!=='#inicio')history.replaceState(null,'','#inicio')});
   function onScroll(){var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;header.classList.toggle('solid',y>40);prog.style.transform='scaleX('+(h>0?y/h:0)+')';sticky.classList.toggle('show',y>innerHeight*.7)}
   addEventListener('scroll',onScroll,{passive:true});onScroll();
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

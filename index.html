@@ -11,7 +11,8 @@
 <meta name="theme-color" content="#0b0b0c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="George-hero.webp">
+<link rel="preload" as="image" href="Hero.webp" media="(min-width: 820px)">
+<link rel="preload" as="image" href="George-hero.webp" media="(max-width: 819px)">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Studio George Silva","description":"Jiu-Jítsu Brasileiro, No-Gi e defesa pessoal","telephone":"+55 24 98807-5539","address":{"@type":"PostalAddress","streetAddress":"Rua Manoel Cabral de Mello, 658, Bairro Delícia","addressLocality":"Areal","addressRegion":"RJ","addressCountry":"BR"}}</script>
 <style>
@@ -151,7 +152,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 .intro img{width:min(70vw,520px);height:auto;animation:introIn 1.2s var(--ease)}
 @keyframes introOut{to{opacity:0;visibility:hidden}}@keyframes introIn{from{opacity:0;transform:scale(.94)}}
 @media(prefers-reduced-motion:reduce){.intro{display:none}}
-.hero-bg{position:absolute;inset:0;background:url('George-hero.webp') center 40%/cover no-repeat,url('Hero.webp') center/cover no-repeat;filter:grayscale(.35);transform:scale(1.06);animation:kb 24s ease-in-out infinite alternate}
+.hero-bg{position:absolute;inset:0;background:url('Hero.webp') center center/cover no-repeat;filter:grayscale(.35);transform:scale(1.06);animation:kb 24s ease-in-out infinite alternate}
 @media(max-width:819px){.hero-bg{background-image:url('George-hero.webp');background-position:center center;background-size:100% auto;background-color:#080809;transform:none;animation:none;filter:grayscale(.18)}.hero-bg::after{background:linear-gradient(180deg,rgba(8,8,9,.38),rgba(8,8,9,.48) 48%,rgba(8,8,9,.9) 100%),radial-gradient(ellipse at 78% 58%,rgba(145,28,28,.2),transparent 52%)}}
 .ph img[data-missing]{opacity:0}
 .ph{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/3;background:var(--surface)}
@@ -583,3 +584,4 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
 </script>
 </body>
 </html>
+

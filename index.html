@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Studio George Silva | Jiu-Jítsu em Areal, RJ</title>
+<meta name="description" content="Treine Jiu-Jítsu Brasileiro, No-Gi e defesa pessoal no Studio George Silva. Aulas para diferentes idades e níveis em Areal, RJ. Mulheres treinam junto com toda a turma. Agende sua aula experimental.">
+<meta property="og:title" content="Studio George Silva | Jiu-Jítsu em Areal, RJ">
+<meta property="og:description" content="Sua próxima evolução começa no tatame. Agende uma aula experimental.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="George-hero.webp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Studio George Silva","description":"Jiu-Jítsu Brasileiro, No-Gi e defesa pessoal","telephone":"+55 24 98807-5539","address":{"@type":"PostalAddress","streetAddress":"Rua Manoel Cabral de Mello, 658, Bairro Delícia","addressLocality":"Areal","addressRegion":"RJ","addressCountry":"BR"}}</script>
+<style>
+:root{
+  --bg:#0b0b0c;--surface:#131315;--text:#f4f4f5;--soft:#b4b4bb;--line:rgba(255,255,255,.1);
+  --accent:#d32f2f;--accent-h:#e53935;--on-accent:#fff;
+  --f-body:'Inter',system-ui,sans-serif;--f-head:'Barlow Condensed','Arial Narrow',sans-serif;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#fafafa;--surface:#fff;--text:#16161a;--soft:#52525b;--line:rgba(0,0,0,.1)}}
+:root[data-theme="light"]{--bg:#fafafa;--surface:#fff;--text:#16161a;--soft:#52525b;--line:rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--f-body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:min(1320px,100% - 2.5rem);margin-inline:auto}
+@media(min-width:1500px){html{font-size:106%}}
+section{padding:clamp(4.5rem,12vw,8rem) 0}
+.eyebrow{font:600 .8rem var(--f-head);letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:block}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:.02em;text-wrap:balance}
+h2{font-size:clamp(2.2rem,7vw,4rem);margin-bottom:1.25rem}
+h3{font-size:1.5rem;margin-bottom:.5rem}
+p{color:var(--soft);text-wrap:pretty}
+.lead{max-width:56ch;font-size:1.1rem}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.9rem 1.8rem;border:0;border-radius:999px;background:var(--accent);color:var(--on-accent);font:600 .85rem var(--f-body);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .3s,transform .4s var(--ease)}
+.btn:hover{background:var(--accent-h);transform:translateY(-2px)}
+.btn .arr{transition:transform .4s var(--ease)}.btn:hover .arr{transform:translateX(5px)}
+.btn.ghost{background:transparent;color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--text);background:transparent}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s,backdrop-filter .4s}
+header.solid{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 1.7rem var(--f-head);letter-spacing:.12em;text-decoration:none}
+.logo span{color:var(--accent)}
+nav{display:none;gap:2rem}
+nav a{font-size:.85rem;text-decoration:none;color:var(--soft);position:relative;transition:color .3s}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--accent);transition:width .4s var(--ease)}
+nav a:hover{color:var(--text)}nav a:hover::after{width:100%}
+.bar .btn{min-height:42px;padding:.5rem 1.2rem;font-size:.75rem}
+@media(min-width:820px){nav{display:flex}}
+#progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:60}
+
+/* hero */
+.hero{color:#f4f4f5;--soft:#d4d4d8;--text:#f4f4f5;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:7rem 0 5rem}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.55),rgba(11,11,12,.88) 70%,#0b0b0c)}
+@keyframes kb{to{transform:scale(1.14) translateX(-1.5%)}}
+.hero-logo{display:block;width:clamp(120px,22vw,210px);height:auto;margin-bottom:1.6rem;transform-box:fill-box;transform-origin:center;will-change:transform,filter}
+.hero-in{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-in .hero-logo{margin-inline:auto}
+.hero-in .lead{margin-inline:auto}
+.hero-in .cta-row{justify-content:center}
+.glow{position:absolute;width:60vmax;height:60vmax;left:var(--x,60%);top:var(--y,30%);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(211,47,47,.18),transparent);pointer-events:none;transition:left .8s var(--ease),top .8s var(--ease)}
+.belt{position:absolute;right:-6%;top:50%;width:min(70vw,640px);aspect-ratio:1;transform:translateY(-50%);opacity:.35;pointer-events:none}
+.belt circle{fill:none;stroke:var(--line);stroke-width:1}
+.belt .sp{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:60 900;animation:spin 14s linear infinite;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1{font-size:clamp(3.2rem,13vw,8.5rem);margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin-bottom:2.2rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.scroll{position:absolute;bottom:1.6rem;left:50%;width:1px;height:48px;background:linear-gradient(var(--soft),transparent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.2;transform:scaleY(.6)}}
+
+/* benefícios */
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:3rem}
+.cell{background:var(--bg);padding:2rem 1.6rem;transition:background .4s}
+.cell:hover{background:var(--surface)}
+.cell b{display:block;font:700 .9rem var(--f-head);letter-spacing:.2em;color:var(--accent);margin-bottom:1.2rem}
+@media(min-width:700px){.grid.c4{grid-template-columns:repeat(4,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+
+/* modalidades */
+.mod{display:flex;flex-direction:column;gap:.4rem;padding:2.2rem 1.6rem;background:var(--bg);text-decoration:none;position:relative;transition:background .4s}
+.mod:hover{background:var(--surface)}
+.mod h3{font-size:2rem}
+.mod .go{margin-top:1rem;color:var(--accent);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.mod .go i{display:inline-block;font-style:normal;transition:transform .4s var(--ease)}
+.mod:hover .go i{transform:translateX(6px)}
+
+/* sobre */
+.about{display:grid;gap:3rem;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;border-top:1px solid var(--line);padding-top:2rem}
+.stats strong{display:block;font:700 clamp(2rem,6vw,3rem) var(--f-head);color:var(--text)}
+.stats span{font-size:.8rem;color:var(--soft)}
+.portrait{aspect-ratio:4/5;border-radius:20px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;position:relative;overflow:hidden}
+.portrait::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,11,12,.9))}
+.portrait span{font:700 7rem var(--f-head);letter-spacing:.1em;opacity:.9;position:relative}
+.portrait small{position:absolute;bottom:1.4rem;left:0;right:0;text-align:center;font:600 .75rem var(--f-head);letter-spacing:.4em;text-transform:uppercase;color:var(--soft)}
+@media(min-width:820px){.about{grid-template-columns:1.2fr .8fr}}
+
+/* depoimentos */
+.quotes{display:grid;gap:1rem;margin-top:3rem}
+blockquote{padding:2rem;border:1px solid var(--line);border-radius:20px;transition:transform .5s var(--ease),border-color .4s}
+blockquote:hover{transform:translateY(-4px);border-color:var(--accent)}
+blockquote p{color:var(--text);margin-bottom:1.2rem}
+cite{font-style:normal;font-size:.85rem;color:var(--soft)}
+@media(min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
+
+/* contato */
+.contact{display:grid;gap:3rem}
+form{display:grid;gap:1.2rem}
+.field{position:relative}
+.field input,.field select{width:100%;min-height:56px;padding:1.4rem 1rem .5rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--text);font:inherit;transition:border-color .3s}
+.field label{position:absolute;left:1rem;top:.45rem;font-size:.72rem;color:var(--soft);letter-spacing:.05em}
+.field input:focus,.field select:focus{border-color:var(--accent);outline:0}
+.info{display:grid;gap:.9rem;align-content:start}
+.info p strong{display:block;color:var(--text);font-weight:600}
+.fine{font-size:.78rem}
+@media(min-width:820px){.contact{grid-template-columns:1fr 1fr}}
+
+/* faixa final + footer */
+.final{text-align:center}
+.final h2{font-size:clamp(2.6rem,10vw,6rem)}
+.final .lead{margin:0 auto 2rem}
+footer{border-top:1px solid var(--line);padding:2rem 0 6rem;font-size:.8rem;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+footer a{text-decoration:none}footer a:hover{color:var(--text)}
+
+/* CTA fixo mobile */
+.sticky{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:40;transform:translateY(160%);transition:transform .6s var(--ease)}
+.sticky.show{transform:none}.sticky .btn{width:100%;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+@media(min-width:820px){.sticky{display:none}footer{padding-bottom:2rem}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+/* ===== imagens e cards (arquivos na mesma pasta do HTML) ===== */
+.logo img{height:46px;width:auto;display:block}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) header.solid .logo img{filter:brightness(0)}}
+.intro{position:fixed;inset:0;z-index:100;background:#0b0b0c;display:grid;place-items:center;pointer-events:none;animation:introOut 1s 1.5s forwards}
+.intro img{width:min(70vw,520px);height:auto;animation:introIn 1.2s var(--ease)}
+@keyframes introOut{to{opacity:0;visibility:hidden}}@keyframes introIn{from{opacity:0;transform:scale(.94)}}
+@media(prefers-reduced-motion:reduce){.intro{display:none}}
+.hero-bg{position:absolute;inset:0;background:url('George-hero.webp') center 40%/cover no-repeat,url('Hero.webp') center/cover no-repeat;filter:grayscale(.35);transform:scale(1.06);animation:kb 24s ease-in-out infinite alternate}
+@media(max-width:819px){.hero-bg{background-image:url('George-hero.webp');background-position:center center;background-size:100% auto;background-color:#080809;transform:none;animation:none;filter:grayscale(.18)}.hero-bg::after{background:linear-gradient(180deg,rgba(8,8,9,.38),rgba(8,8,9,.48) 48%,rgba(8,8,9,.9) 100%),radial-gradient(ellipse at 78% 58%,rgba(145,28,28,.2),transparent 52%)}}
+.ph img[data-missing]{opacity:0}
+.ph{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/3;background:var(--surface)}
+.ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) brightness(.88);transition:transform .9s var(--ease),filter .6s;cursor:zoom-in}
+.ph:hover img,.card:hover .ph img{transform:scale(1.06);filter:none}
+.cards{display:grid;gap:1rem;margin-top:3rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .4s}
+.card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.card .ph{border-radius:0}
+.card .tx{padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.card .go{margin-top:auto;padding-top:.8rem;color:var(--accent);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.card .go i{display:inline-block;font-style:normal;transition:transform .4s var(--ease)}.card:hover .go i{transform:translateX(6px)}
+@media(min-width:600px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.cards.c4{grid-template-columns:repeat(4,1fr)}.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.strip{display:flex;gap:.6rem;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:.7rem;padding-bottom:.4rem;scrollbar-width:thin}
+.strip figure{flex:0 0 38%;scroll-snap-align:start}.strip .ph{aspect-ratio:1;border-radius:12px}
+.strip.g3 figure{flex:0 0 78%}.strip.g3 .ph{aspect-ratio:4/3}
+figcaption{font-size:.8rem;color:var(--soft);margin-top:.5rem}
+@media(min-width:820px){.strip.g3{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.strip figure{flex-basis:24%}}
+.feature{display:grid;gap:1.6rem;margin-top:4.5rem;align-items:center}
+.feature h3{font-size:2.2rem}.feature p+p{margin-top:.8rem}.feature .btn{margin-top:1.4rem}
+@media(min-width:820px){.feature{grid-template-columns:1fr 1fr;gap:3.5rem}.feature.rev .txt{order:2}}
+.hist{position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:grid;place-items:center;padding:2.5rem 1.5rem;text-align:center;margin-top:3rem;color:#f4f4f5}
+.hist img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.5) brightness(.4)}
+.hist p{position:relative;max-width:60ch;color:#f4f4f5;font-size:1.1rem}
+.belts{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin-top:1rem}
+.cmp{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;max-width:520px;margin-top:1.2rem;--p:50%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.cmp .top{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.cmp .line{position:absolute;z-index:2;top:0;bottom:0;left:var(--p);width:2px;background:#fff;pointer-events:none}
+.cmp-handle{position:absolute;z-index:4;left:var(--p);top:50%;transform:translate(-50%,-50%);width:48px;height:48px;padding:0;border:1px solid rgba(0,0,0,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;gap:1px;background:#fff;color:#111;box-shadow:0 4px 18px rgba(0,0,0,.35);cursor:ew-resize;touch-action:none;user-select:none;-webkit-user-select:none}
+.cmp-handle span{font:800 20px/1 var(--f-body)}
+.cmp-handle:hover,.cmp-handle:focus-visible{background:#f1f1f3;outline:3px solid rgba(255,255,255,.55);outline-offset:3px}
+.cmp-handle.is-dragging{transform:translate(-50%,-50%) scale(1.08);cursor:grabbing}
+.cmp .lb{position:absolute;bottom:.8rem;font-size:.75rem;background:rgba(0,0,0,.6);color:#fff;padding:.2rem .7rem;border-radius:99px}
+.faq{margin-top:2rem;display:grid;gap:1rem}
+.faq details{border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
+.faq summary{cursor:pointer;font-weight:600;list-style:none}.faq summary::after{content:"+";float:right;color:var(--accent)}
+.faq details[open] summary::after{content:"–"}.faq details p{margin-top:.6rem}
+.person{display:flex;gap:1rem;align-items:center}
+.person img{width:72px;height:72px;border-radius:50%;object-fit:cover;filter:grayscale(.3)}
+.cbjj{display:block;margin-top:2.5rem;border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:transform .5s var(--ease),border-color .4s}
+.cbjj:hover{transform:translateY(-4px);border-color:var(--accent)}.cbjj img{width:100%;height:auto}
+dialog{border:0;background:transparent;max-width:94vw;max-height:94vh;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height:90vh;border-radius:12px}
+.portrait{background:var(--surface)}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.3)}
+.portrait::before{z-index:1;background:linear-gradient(180deg,transparent 45%,rgba(11,11,12,.9))}
+.portrait small{z-index:2}
+.loc{margin-top:2rem;border-radius:16px;overflow:hidden;aspect-ratio:16/9}.loc img{width:100%;height:100%;object-fit:cover}
+.contact-btn{display:flex;align-items:center;gap:1rem;padding:.9rem 1rem;border:1px solid var(--line);border-radius:18px;background:var(--surface);text-decoration:none;color:var(--text);transition:transform .45s var(--ease),border-color .3s,background .3s}
+.contact-btn:hover{transform:translateY(-3px);border-color:var(--accent)}
+.contact-btn.wa{border-color:rgba(211,47,47,.55);background:linear-gradient(90deg,rgba(211,47,47,.14),transparent)}
+.cb-img{flex:0 0 64px;width:64px;height:64px;border-radius:50%;object-fit:cover;filter:grayscale(.2);display:grid;place-items:center;background:#0b0b0c;border:1px solid var(--line);overflow:hidden}
+.cb-logo img{width:70%;height:auto}.cb-logo{padding:.2rem}
+.cb-pin{color:var(--accent);background:transparent}.cb-pin svg{width:28px;height:28px}
+.cb-tx{display:flex;flex-direction:column;flex:1;min-width:0;line-height:1.35}
+.cb-tx strong{font-weight:600}.cb-tx small{color:var(--soft);font-size:.82rem}
+.cb-ic{flex:0 0 auto;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;transition:transform .4s var(--ease)}
+.cb-ic svg{width:22px;height:22px}.contact-btn:hover .cb-ic{transform:scale(1.1) rotate(-6deg)}
+.contact-btn.loc .cb-ic{background:transparent;color:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .cb-logo img{filter:none}}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.chip{font:600 .78rem var(--f-body);letter-spacing:.06em;padding:.55rem 1rem;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--soft);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.chip:hover{border-color:var(--text);color:var(--text)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.cmp img{transition:opacity .35s}.cmp img.sw{opacity:0}
+.card[data-plan] .ph{aspect-ratio:1/1}
+.card[data-plan] .ph img{object-position:center top}
+
+.card[target="_blank"] .ph{aspect-ratio:1/1;background:#e4e4e4}
+.card[target="_blank"] .ph img{object-fit:contain;object-position:center;filter:none}
+.card[target="_blank"]:hover .ph img{transform:scale(1.04)}
+.card[target="_blank"] .ph{aspect-ratio:5/4;background:var(--surface)}
+.card[target="_blank"] .ph img{object-fit:cover;object-position:center}
+.card[href*="Camisa"] .ph,.card[href*="Rash"] .ph{aspect-ratio:5/4}
+.card[href*="Camisa"] .ph{background:#e4e4e4}
+.card[href*="Rash"] .ph{background:#fff}
+.card[href*="Camisa"] .ph img,.card[href*="Rash"] .ph img{object-fit:contain}
+.card[href*="Camisa"] .ph.cut,.card[href*="Rash"] .ph.cut{background:radial-gradient(circle at 50% 42%,#5d5d66,#2a2a2f 78%)}
+.ph.cut img{filter:drop-shadow(0 14px 16px rgba(0,0,0,.45))!important}
+.strip:not(.g3) figure:first-child{margin-left:auto}
+.strip:not(.g3) figure:last-child{margin-right:auto}
+/* Card de localização: mapa interativo e arte de localização */
+.location-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:330px;margin-top:1.5rem;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 18px 44px rgba(0,0,0,.16)}
+.location-map{position:relative;min-width:0;min-height:330px;background:#e8e9eb}
+.location-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map-label{position:absolute;top:1rem;left:1rem;padding:.45rem .7rem;border:1px solid rgba(255,255,255,.38);border-radius:999px;background:rgba(15,16,18,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.1em;pointer-events:none}
+.location-visual{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-width:0;min-height:330px;padding:1.5rem;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,rgba(255,255,255,.1),transparent 52%),linear-gradient(145deg,#191a1c,#09090a 78%);color:#fff;text-decoration:none}
+.location-visual>img{position:absolute;z-index:0;left:50%;top:43%;width:142%;height:142%;max-width:none;object-fit:contain;transform:translate(-50%,-50%);filter:invert(1);mix-blend-mode:screen;opacity:.42;pointer-events:none}
+.location-details{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;width:100%;padding:2.5rem 0 0;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.location-kicker{color:#fff;font-size:.67rem;font-weight:700;letter-spacing:.16em}
+.location-details strong{font-size:clamp(1.2rem,2vw,1.65rem);line-height:1.1}
+.location-details small{color:rgba(255,255,255,.8);font-size:.85rem;line-height:1.5}
+.location-route{display:inline-flex;align-items:center;gap:.65rem;margin-top:.45rem;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.location-route span{display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.55);border-radius:50%;transition:transform .3s var(--ease),background .3s}
+.location-visual:hover .location-route span{transform:translateX(4px);background:rgba(255,255,255,.12)}
+@media(max-width:819px){.location-card{grid-template-columns:1fr}.location-map{min-height:250px}.location-visual{min-height:270px}.location-visual>img{width:125%;height:125%;top:39%}}
+</style>
+<script>
+/* Carregamento tolerante de imagens: se um arquivo não for encontrado, tenta variações do nome
+   (espaço ↔ "_" ou "-", acentos NFC/NFD, sem acento, minúsculas) e outras extensões. */
+(function(){
+  var EXT=['webp','png','jpg','jpeg'],missing={};
+  function names(base){
+    var out=[],add=function(n){if(n&&out.indexOf(n)<0)out.push(n)};
+    var nfc=base.normalize?base.normalize('NFC'):base,nfd=base.normalize?base.normalize('NFD'):base;
+    var plain=nfd.replace(/[\u0300-\u036f]/g,'');
+    [base,nfc,nfd,plain,base.toLowerCase(),plain.toLowerCase()].forEach(function(b){
+      add(b);add(b.replace(/_/g,' '));add(b.replace(/ /g,'_'));add(b.replace(/_/g,'-'));add(b.replace(/-/g,'_'));
+    });
+    return out;
+  }
+  function candidates(u){
+    var m=u.match(/^(.*?)(\.[A-Za-z0-9]+)(\?.*)?$/);if(!m)return[];
+    var dir=m[1].lastIndexOf('/')+1,pre=m[1].slice(0,dir),base=m[1].slice(dir),ext=m[2].slice(1).toLowerCase(),out=[];
+    var exts=[ext].concat(EXT.filter(function(e){return e!==ext}));
+    names(base).forEach(function(n){exts.forEach(function(e){var c=pre+n+'.'+e;if(c!==u&&out.indexOf(c)<0)out.push(c)})});
+    return out;
+  }
+  function probe(list,ok,fail){
+    var i=0;(function next(){
+      if(i>=list.length)return fail&&fail();
+      var im=new Image(),u=list[i++];im.onload=function(){ok(u)};im.onerror=next;im.src=u;
+    })();
+  }
+  function fix(img){
+    if(img.__fixing)return;var cur=img.getAttribute('src');
+    if(!cur||/^(data:|https?:|blob:)/.test(cur))return;
+    img.__fixing=true;var orig=cur;
+    probe(candidates(orig),function(u){img.__fixing=false;img.src=u;img.removeAttribute('loading')},function(){
+      img.__fixing=false;missing[orig]=1;img.setAttribute('data-missing','');
+      if(window.console)console.warn('Imagem não encontrada:',orig,'(verifique o nome do arquivo e se ele está na mesma pasta do HTML)');
+    });
+  }
+  document.addEventListener('error',function(e){if(e.target&&e.target.tagName==='IMG')fix(e.target)},true);
+  var cache={};
+  window.__resolve=function(u,cb){if(cache[u])return cb(cache[u]);probe([u].concat(candidates(u)),function(r){cache[u]=r;cb(r)},function(){cb(u)})};
+  window.__bgFallback=function(el,urls){
+    var all=[];urls.forEach(function(u){all.push(u);candidates(u).forEach(function(c){all.push(c)})});
+    probe(all,function(u){el.style.backgroundImage="url('"+u.replace(/'/g,"%27")+"')"},function(){
+      if(window.console)console.warn('Imagem de fundo não encontrada:',urls.join(', '))});
+  };
+  document.addEventListener('DOMContentLoaded',function(){
+    [].forEach.call(document.images,function(i){if(i.complete&&i.naturalWidth===0&&i.getAttribute('src'))fix(i)});
+    var h=document.querySelector('.hero-bg');if(h)window.__bgFallback(h,['George-hero.webp','Hero.webp']);
+  });
+})();
+</script>
+</head>
+<body>
+<!-- Coloque este arquivo na mesma pasta das imagens (Hero.webp, George-hero.webp, Treino_*.webp etc.) -->
+<div class="intro" aria-hidden="true"><img src="SGS-1.png" alt=""></div>
+<div id="progress" aria-hidden="true"></div>
+<header id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#inicio" aria-label="Studio George Silva, início"><img src="Studio_George_Silva_Logo_Sem_Fundo.png" alt="Logo do Studio George Silva"></a>
+    <nav aria-label="Navegação principal">
+      <a href="#beneficios">Benefícios</a><a href="#aulas">Aulas</a><a href="#studio">O Studio</a><a href="#depoimentos">Alunos</a><a href="#shop">Shop</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" href="#contato">Aula grátis</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-bg" role="img" aria-label="Equipe do Studio George Silva"></div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+  <svg class="belt" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="90"/><circle class="sp" cx="200" cy="200" r="190"/></svg>
+  <div class="wrap hero-in">
+    <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1558" role="img" aria-label="SGS - Beyond the Mat"><defs><linearGradient id="sgs-hero-sheen" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="250" spreadMethod="pad" gradientTransform="translate(-1400 0)">
+<stop offset="0" stop-color="#d8dce3"/><stop offset=".47" stop-color="#d8dce3"/><stop offset=".5" stop-color="#ffffff"/><stop offset=".53" stop-color="#d8dce3"/><stop offset="1" stop-color="#d8dce3"/>
+<animateTransform id="sgs-hero-sheen-motion" attributeName="gradientTransform" type="translate" values="-1400 0;1400 0" dur="5.5s" repeatCount="indefinite" begin="0s"/>
+</linearGradient></defs><path fill="url(#sgs-hero-sheen)" fill-rule="evenodd" d="M1254 1545 1253 1546 1253 1554 1256 1556 1262 1555 1263 1553 1263 1547 1261 1545ZM1180 1493 1179 1494 1179 1500 1196 1500 1198 1502 1198 1554 1200 1556 1205 1556 1206 1555 1206 1503 1208 1500 1226 1500 1227 1495 1225 1493ZM1119 1493 1117 1496 1111 1516 1109 1519 1107 1527 1102 1538 1097 1555 1102 1556 1105 1554 1107 1547 1111 1539 1134 1539 1137 1543 1140 1554 1143 1556 1147 1556 1149 1554 1144 1542 1142 1534 1140 1531 1140 1528 1137 1522 1128 1494 1127 1493ZM1123 1505 1125 1507 1125 1510 1127 1513 1132 1528 1132 1531 1131 1532 1115 1532 1113 1530 1120 1509ZM1000 1493 998 1499 998 1509 999 1510 999 1522 998 1523 999 1544 998 1547 999 1548 999 1555 1001 1556 1006 1555 1006 1544 1007 1543 1007 1539 1006 1538 1006 1528 1007 1527 1006 1513 1008 1511 1010 1513 1012 1521 1014 1524 1015 1529 1017 1532 1019 1540 1021 1543 1025 1555 1031 1556 1033 1555 1041 1532 1043 1529 1047 1515 1050 1510 1051 1511 1051 1554 1053 1556 1059 1555 1059 1494 1058 1493 1049 1493 1047 1494 1044 1505 1042 1508 1040 1516 1035 1527 1031 1541 1029 1543 1026 1539 1022 1525 1014 1506 1014 1503 1011 1497 1011 1495 1009 1493ZM871 1493 870 1494 870 1555 872 1556 882 1556 883 1555 908 1556 910 1554 910 1550 908 1548 880 1548 878 1546 878 1530 880 1528 905 1527 906 1526 906 1522 905 1521 881 1521 878 1519 878 1502 880 1500 909 1500 909 1497 910 1496 909 1493ZM782 1493 781 1494 781 1555 783 1556 789 1555 789 1530 791 1528 796 1528 797 1527 813 1527 814 1528 819 1528 820 1529 820 1555 822 1556 828 1555 828 1494 827 1493 821 1493 820 1494 820 1519 816 1521 792 1521 789 1519 789 1494 788 1493ZM697 1493 696 1494 696 1500 713 1500 715 1502 715 1554 718 1556 721 1556 723 1555 723 1502 725 1500 743 1500 743 1494 742 1493ZM562 1493 560 1495 560 1516 561 1517 560 1554 561 1555 582 1556 583 1555 589 1555 598 1551 605 1543 609 1530 608 1513 604 1504 598 1498 590 1494 586 1494 585 1493ZM571 1500 583 1500 584 1501 588 1501 592 1503 597 1508 599 1512 600 1519 601 1520 600 1534 596 1542 589 1547 586 1548 570 1548 568 1546 568 1503ZM472 1493 471 1494 471 1554 476 1556 479 1555 479 1511 481 1510 491 1524 493 1529 508 1554 511 1556 516 1556 518 1555 518 1494 517 1493 512 1493 511 1494 511 1538 509 1539 506 1536 505 1533 496 1520 480 1493ZM397 1493 386 1500 381 1507 379 1513 379 1518 378 1519 379 1536 383 1545 388 1551 398 1556 408 1557 415 1555 422 1551 429 1542 432 1532 432 1517 428 1505 421 1497 413 1493ZM404 1499 411 1500 415 1502 420 1507 424 1517 424 1531 422 1538 416 1546 410 1549 400 1549 396 1547 390 1541 386 1529 386 1520 390 1508 392 1505 397 1501ZM298 1493 297 1495 302 1505 306 1510 317 1530 317 1555 324 1555 325 1554 325 1529 346 1494 345 1493 338 1493 336 1495 328 1511 321 1521 317 1516 306 1495 304 1493ZM224 1493 222 1496 222 1535 223 1536 222 1539 222 1554 224 1556 237 1556 238 1555 261 1556 262 1555 262 1549 261 1548 232 1548 230 1546 230 1530 232 1528 258 1527 258 1521 256 1520 242 1520 241 1521 234 1521 230 1518 230 1503 233 1500 261 1500 262 1499 262 1494 261 1493ZM140 1493 139 1494 139 1555 140 1556 155 1556 156 1555 171 1555 176 1553 180 1550 183 1545 183 1542 184 1541 184 1536 182 1530 174 1523 174 1522 179 1518 181 1514 181 1504 179 1500 173 1495 167 1493ZM147 1529 149 1527 165 1527 166 1528 169 1528 174 1532 176 1536 176 1540 174 1544 168 1548 148 1548 147 1547ZM147 1502 149 1500 164 1500 165 1501 168 1501 173 1506 173 1514 172 1516 165 1520 148 1520 147 1519ZM14 1171 7 1186 4 1195 3 1205 2 1206 2 1215 1 1218 2 1219 2 1231 3 1232 4 1242 12 1261 23 1276 39 1289 55 1297 57 1297 63 1300 66 1300 75 1303 79 1303 80 1304 94 1305 95 1306 111 1306 112 1307 306 1307 307 1308 311 1308 317 1310 324 1316 326 1320 326 1330 324 1334 317 1340 308 1343 118 1343 106 1338 100 1331 96 1321 2 1321 0 1322 3 1344 6 1352 6 1355 9 1361 10 1366 18 1381 24 1389 33 1398 50 1409 74 1417 86 1418 87 1419 111 1419 112 1420 320 1420 321 1419 338 1419 339 1418 346 1418 347 1417 352 1417 353 1416 357 1416 361 1414 364 1414 386 1405 397 1397 412 1381 420 1367 425 1353 426 1345 427 1344 427 1338 428 1337 428 1315 427 1314 426 1302 424 1298 423 1292 420 1287 420 1285 411 1271 397 1257 378 1246 376 1246 371 1243 362 1240 359 1240 350 1237 332 1235 331 1234 323 1234 322 1233 120 1233 108 1229 104 1225 102 1221 103 1211 112 1203 115 1203 116 1202 149 1202 150 1201 173 1201 174 1202 184 1202 185 1201 194 1201 195 1202 206 1202 207 1201 220 1201 221 1202 225 1202 226 1201 302 1202 303 1203 306 1203 314 1208 321 1218 419 1218 420 1217 420 1210 419 1209 419 1203 418 1202 416 1191 412 1179 405 1165 399 1156 386 1143 379 1138 367 1132 354 1128 346 1127 345 1126 330 1125 329 1124 96 1124 95 1125 88 1125 87 1126 82 1126 81 1127 70 1129 59 1133 47 1139 33 1149 23 1159ZM980 1172 975 1182 971 1194 970 1202 969 1203 969 1208 968 1209 968 1228 969 1229 969 1235 974 1252 980 1264 986 1272 995 1281 1006 1289 1022 1297 1024 1297 1030 1300 1037 1301 1041 1303 1046 1303 1053 1305 1061 1305 1062 1306 1076 1306 1077 1307 1274 1307 1287 1311 1293 1317 1295 1321 1295 1331 1293 1335 1287 1341 1280 1344 1275 1344 1274 1345 1087 1345 1086 1344 1079 1343 1074 1340 1067 1333 1063 1322 968 1322 967 1323 967 1333 968 1334 969 1344 976 1367 980 1375 991 1391 999 1399 1007 1405 1018 1411 1039 1418 1050 1419 1051 1420 1059 1420 1060 1421 1301 1421 1302 1420 1312 1420 1313 1419 1319 1419 1320 1418 1325 1418 1326 1417 1333 1416 1342 1413 1358 1405 1365 1400 1379 1386 1388 1372 1388 1370 1391 1365 1392 1360 1395 1354 1395 1350 1397 1344 1397 1338 1398 1337 1398 1315 1397 1314 1397 1309 1396 1308 1395 1300 1392 1291 1387 1281 1378 1268 1371 1261 1363 1255 1347 1246 1319 1237 1308 1236 1307 1235 1300 1235 1299 1234 1290 1234 1289 1233 1087 1233 1086 1232 1081 1232 1075 1229 1071 1225 1069 1221 1069 1213 1071 1209 1076 1204 1080 1202 1089 1201 1090 1200 1245 1200 1246 1201 1270 1201 1281 1206 1290 1218 1387 1218 1389 1217 1388 1205 1387 1204 1387 1200 1386 1199 1384 1188 1377 1173 1377 1171 1375 1169 1373 1164 1364 1152 1356 1144 1336 1132 1315 1126 1301 1125 1300 1124 1082 1124 1081 1123 1061 1124 1060 1125 1054 1125 1053 1126 1048 1126 1044 1128 1036 1129 1025 1134 1023 1134 1010 1141 998 1150 991 1157ZM466 1198 456 1228 454 1243 453 1244 452 1265 451 1266 452 1294 453 1295 454 1308 455 1309 455 1314 456 1315 458 1326 465 1346 472 1360 483 1376 498 1391 506 1397 526 1408 553 1417 563 1418 564 1419 571 1419 572 1420 580 1420 581 1421 780 1421 781 1420 789 1420 790 1419 802 1417 815 1411 824 1405 832 1398 840 1388 842 1388 847 1397 847 1399 857 1420 931 1420 932 1419 932 1252 931 1251 672 1251 671 1252 671 1311 672 1312 818 1312 819 1313 819 1315 812 1325 803 1333 788 1341 782 1343 778 1343 777 1344 772 1344 771 1345 762 1345 761 1346 626 1346 625 1345 611 1344 595 1339 580 1330 571 1321 566 1314 561 1304 558 1295 558 1291 556 1285 556 1258 561 1240 566 1230 570 1224 581 1213 590 1207 596 1204 613 1199 618 1199 619 1198 641 1198 642 1197 672 1197 673 1198 681 1198 682 1197 735 1197 736 1198 762 1197 763 1198 773 1198 774 1199 786 1200 795 1203 810 1212 822 1226 931 1226 931 1221 930 1220 929 1213 923 1196 913 1177 904 1165 892 1153 880 1144 859 1133 834 1125 830 1125 824 1123 818 1123 817 1122 810 1122 809 1121 770 1121 769 1120 739 1120 738 1121 736 1120 731 1120 730 1121 725 1121 724 1120 673 1120 672 1121 666 1120 665 1121 657 1121 656 1120 595 1120 594 1121 573 1122 572 1123 562 1124 557 1126 553 1126 546 1129 543 1129 540 1131 535 1132 509 1146 493 1159 483 1170 475 1181ZM1344 444 1342 442 912 442 910 448 910 528 909 529 909 535 908 536 908 543 906 548 906 554 898 578 893 588 883 602 872 614 862 622 853 628 851 628 842 633 839 633 827 638 822 638 813 641 804 641 803 642 795 642 794 643 780 643 779 642 722 642 721 643 707 643 706 642 696 642 695 643 671 643 670 642 601 642 600 643 597 643 596 642 42 642 41 643 41 993 45 995 931 995 932 994 972 995 973 994 988 994 989 993 1000 993 1001 992 1013 992 1018 990 1028 990 1033 988 1044 987 1047 985 1053 985 1057 983 1061 983 1069 980 1073 980 1076 978 1080 978 1083 976 1090 975 1093 973 1096 973 1099 971 1105 970 1120 963 1127 961 1132 958 1134 958 1136 956 1138 956 1147 951 1149 951 1151 949 1166 942 1176 935 1184 931 1208 915 1240 888 1240 887 1252 876 1267 858 1269 857 1291 827 1291 825 1303 808 1303 806 1308 799 1308 797 1313 788 1313 786 1315 784 1315 782 1320 773 1320 770 1322 768 1323 763 1325 760 1325 757 1327 754 1328 748 1330 745 1330 741 1332 738 1332 734 1334 731 1335 723 1337 720 1337 714 1339 710 1340 697 1342 692 1342 677 1343 676 1343 670 1344 669ZM41 540 42 541 48 541 49 542 56 542 57 541 477 541 479 535 479 466 480 465 480 455 482 450 482 445 484 440 485 432 487 429 487 426 489 423 492 413 497 405 497 403 509 386 522 373 536 362 555 352 565 349 568 347 573 347 576 345 581 345 590 342 599 342 606 340 1343 340 1344 339 1344 3 1343 2 403 2 402 3 392 3 391 4 384 4 383 5 374 5 367 7 359 7 358 8 353 8 347 10 342 10 338 12 333 12 329 14 321 15 309 19 305 19 282 27 279 29 270 31 265 34 251 39 249 41 247 41 238 46 236 46 228 51 226 51 224 53 212 59 207 63 197 68 172 85 144 109 126 127 100 159 99 162 85 182 85 184 80 191 80 193 75 201 75 203 70 212 70 214 68 216 65 225 63 227 63 230 58 241 58 245 56 247 56 251 51 263 51 268 48 276 48 282 46 286 46 296 44 300 42 328 41 329Z"/></svg>
+    <h1 class="rv" style="--d:.1s">Sua evolução<br>começa no <em>tatame</em></h1>
+    <p class="lead rv" style="--d:.2s">Jiu-Jítsu Brasileiro e Defesa Pessoal para quem quer mais disciplina, confiança e qualidade de vida. Todos os níveis são bem-vindos.</p>
+    <div class="cta-row rv" style="--d:.3s">
+      <a class="btn" href="#contato">Agendar aula experimental <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="#aulas">Ver aulas</a>
+    </div>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</section>
+
+<section id="beneficios" aria-labelledby="t-ben">
+  <div class="wrap">
+    <span class="eyebrow rv">Por que treinar</span>
+    <h2 id="t-ben" class="rv">Muito além da luta</h2>
+    <p class="lead rv">O Jiu-Jítsu traz benefícios para corpo e mente: técnica e alavancas no lugar da força bruta.</p>
+    <div class="grid c4">
+      <div class="cell rv"><b>01</b><h3>Corpo forte</h3><p>Resistência, flexibilidade e coordenação motora.</p></div>
+      <div class="cell rv" style="--d:.08s"><b>02</b><h3>Mente calma</h3><p>Controle emocional e bem-estar no dia a dia.</p></div>
+      <div class="cell rv" style="--d:.16s"><b>03</b><h3>Autodefesa</h3><p>Técnica real para se proteger com segurança.</p></div>
+      <div class="cell rv" style="--d:.24s"><b>04</b><h3>Comunidade</h3><p>Respeito, disciplina e crescimento pessoal.</p></div>
+    </div>
+    <div class="hist rv"><img src="História_do_Jiu-Jítsu_Brasileiro.webp" alt="História do Jiu-Jítsu Brasileiro" loading="lazy" decoding="async"><p>O Jiu-Jítsu Brasileiro evoluiu a partir do Judo e do Jiu-Jítsu japonês e foi adaptado no Brasil por famílias como os Gracie. Focado no combate no solo, enfatiza técnica e alavancas em vez de força bruta.</p></div>
+  </div>
+</section>
+
+<section id="aulas" aria-labelledby="t-aul" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv">Nossos treinos</span>
+    <h2 id="t-aul" class="rv">Encontre sua turma</h2>
+    <div class="cards c3"><a class="card rv" style="--d:0.0s" href="#contato" data-plan="Jiu-Jítsu com kimono (adultos)"><div class="ph"><img src="Treino_Adultos.webp" alt="Treino dos adultos no Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>Jiu-Jítsu com Kimono</h3><p>Técnica, disciplina e evolução de faixas, do iniciante ao atleta.</p><span class="go">Quero treinar <i>→</i></span></div></a><a class="card rv" style="--d:0.08s" href="#contato" data-plan="No-Gi"><div class="ph"><img src="Treino_NO-GI.webp" alt="Treino No-Gi no Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>No-Gi</h3><p>Sem kimono: mais velocidade e controle corporal. Base do grappling e do MMA.</p><span class="go">Quero treinar <i>→</i></span></div></a><a class="card rv" style="--d:0.16s" href="#contato" data-plan="Jiu-Jítsu Kids"><div class="ph"><img src="Kids_Card-1.webp" alt="Treino Kids no Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>Kids</h3><p>Disciplina, autoconfiança e respeito em ambiente seguro e acolhedor.</p><span class="go">Matricular meu filho <i>→</i></span></div></a></div>
+
+    <div class="feature">
+      <div class="txt rv"><span class="eyebrow">No-Gi</span><h3>Jiu-Jítsu sem kimono</h3>
+        <p>Sem as pegadas no pano, o treino exige mais controle corporal, velocidade de decisão e precisão técnica. É a base do grappling moderno e do MMA, e desenvolve reflexos e condicionamento físico.</p>
+        <p>Para treinar, use <strong>rashguard</strong> e <strong>shorts sem bolso/sem zíper</strong> ou <strong>calça de compressão</strong> (spats).</p>
+        <a class="btn" href="#contato" data-plan="No-Gi">Quero treinar No-Gi <span class="arr" aria-hidden="true">→</span></a></div>
+      <div class="rv"><div class="ph"><img src="No-Gi_Principal.webp" alt="Turma do No-Gi, Studio George Silva" loading="lazy" decoding="async"></div><div class="strip "><figure><div class="ph"><img src="No_Gi-1.webp" alt="Momento do No-Gi 1" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="No_Gi-2.webp" alt="Momento do No-Gi 2" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="No_Gi-3.webp" alt="Momento do No-Gi 3" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="No_Gi-4.webp" alt="Momento do No-Gi 4" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="No_Gi-5.webp" alt="Momento do No-Gi 5" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="No_Gi-6.webp" alt="Momento do No-Gi 6" loading="lazy" decoding="async"></div></figure></div></div>
+    </div>
+
+    <div class="feature rev">
+      <div class="txt rv"><span class="eyebrow">Inclusão</span><h3>Mulheres treinam junto com toda a turma</h3>
+        <p>Mulheres de todas as idades e níveis são bem-vindas para evoluir no Jiu-Jítsu em um ambiente acolhedor, seguro e respeitoso.</p>
+        <a class="btn" href="#contato" data-plan="Ainda não sei / quero orientação">Quero conhecer os treinos <span class="arr" aria-hidden="true">→</span></a></div>
+      <div class="rv"><div class="ph"><img src="Leticia_Capa.webp" alt="Aluna do Studio George Silva" style="object-position:center 10%" loading="lazy" decoding="async"></div><div class="strip "><figure><div class="ph"><img src="Meninas-1.webp" alt="Alunas do Studio 1" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="Meninas-2.webp" alt="Alunas do Studio 2" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="Meninas-3.webp" alt="Alunas do Studio 3" loading="lazy" decoding="async"></div></figure></div></div>
+    </div>
+
+    <div class="feature">
+      <div class="txt rv"><span class="eyebrow">Kids</span><h3>Para o seu filho</h3>
+        <p>O Jiu-Jítsu infantil desenvolve disciplina, autoconfiança e respeito, além de fortalecer corpo e mente. Tudo em um ambiente seguro, acolhedor e focado na formação para a vida.</p>
+        <a class="btn" href="#contato" data-plan="Jiu-Jítsu Kids">Matricular meu filho <span class="arr" aria-hidden="true">→</span></a></div>
+      <div class="rv"><div class="ph"><img src="Rafa_e_Bejamin.webp" alt="Alunos Kids do Studio George Silva" style="object-position:center 20%" loading="lazy" decoding="async"></div><div class="strip "><figure><div class="ph"><img src="Treino_kids-1.webp" alt="Treino Kids 1" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="Treino_kids-2.webp" alt="Treino Kids 2" loading="lazy" decoding="async"></div></figure><figure><div class="ph"><img src="Kids_Card-1.webp" alt="Kids no tatame" loading="lazy" decoding="async"></div></figure></div></div>
+    </div>
+
+    <div class="feature rev">
+      <div class="txt rv"><span class="eyebrow">Faixas e kimonos</span><h3>Sua graduação</h3>
+        <p>Existem kimonos para treino e competição; escolha modelos confortáveis, duráveis e que atendam às normas quando for competir. Arraste para comparar.</p>
+        <div class="cmp" id="cmp" role="group" aria-label="Comparar cores de kimono">
+          <img id="cmpR" src="Kimono_Azul.webp" alt="Kimono azul" loading="lazy" decoding="async"><img id="cmpL" class="top" src="Kimono_Branco.webp" alt="Kimono branco" loading="lazy" decoding="async">
+          <span class="lb" id="lbL" style="left:.8rem">Branco</span><span class="lb" id="lbR" style="right:.8rem">Azul</span>
+          <div class="line" aria-hidden="true"></div><button class="cmp-handle" type="button" role="slider" aria-label="Arraste para comparar os kimonos" aria-orientation="horizontal" aria-valuemin="5" aria-valuemax="95" aria-valuenow="50" tabindex="0"><span aria-hidden="true">‹</span><span aria-hidden="true">›</span></button>
+        </div>
+        <div class="chips" role="tablist" aria-label="Escolher comparação">
+          <button type="button" class="chip on" role="tab" aria-selected="true" data-l="Branco" data-r="Azul">Branco × Azul</button>
+          <button type="button" class="chip" role="tab" aria-selected="false" data-l="Azul" data-r="Preto">Azul × Preto</button>
+          <button type="button" class="chip" role="tab" aria-selected="false" data-l="Branco" data-r="Preto">Branco × Preto</button>
+        </div></div>
+      <div class="rv"><img class="belts" src="Graduação_BJJ_Faixas.webp" alt="Tabela com a idade mínima para cada faixa do Jiu-Jítsu" loading="lazy" decoding="async">
+        <div class="faq">
+          <details><summary>Posso treinar com kimono de outra cor?</summary><p>Sim, na maioria das academias, para treinos internos, desde que esteja em boas condições e adequado à prática.</p></details>
+          <details><summary>Posso competir com outra cor além de branco, preto ou azul?</summary><p>Não. Competições oficiais (ex.: IBJJF) normalmente exigem branco, preto ou azul. Verifique o regulamento do evento.</p></details>
+        </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="studio" aria-labelledby="t-stu" style="padding-top:0">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow rv">O Studio</span>
+      <h2 id="t-stu" class="rv">Professor George Silva</h2>
+      <p class="lead rv">Nosso espaço é dedicado ao Brazilian Jiu-Jítsu, unindo técnica, disciplina e respeito, com foco em segurança, evolução técnica e acolhimento de alunos de todos os níveis.</p>
+      <p class="lead rv" style="margin-top:.8rem">Recebemos iniciantes, praticantes experientes e atletas. Mais do que um local de treino, aqui é o ambiente de desenvolvimento pessoal, onde os valores da arte marcial são vividos no dia a dia.</p>
+      <div class="stats rv">
+        <div><strong data-count="3">0</strong><span>Modalidades</span></div>
+        <div><strong data-count="100" data-suffix="%">0</strong><span>Níveis aceitos</span></div>
+        <div><strong>Gi, No-Gi &amp; Kids</strong><span>Treino completo</span></div>
+      </div>
+    </div>
+    <div class="portrait rv"><img src="George.webp" alt="Professor George Silva" loading="lazy" decoding="async"><small>Beyond the Mat</small></div>
+  </div>
+  <div class="wrap">
+    <h3 class="rv" style="margin-top:4rem;font-size:2rem">Estrutura física</h3>
+    <p class="rv">Conheça o espaço onde os treinos acontecem.</p>
+    <div class="strip g3"><figure><div class="ph"><img src="Entrada.jpg" alt="Entrada do Studio" style="object-position:center 0%" loading="lazy" decoding="async"></div><figcaption>Entrada do Studio</figcaption></figure><figure><div class="ph"><img src="Tatame_Principal.webp" alt="Tatame Principal" loading="lazy" decoding="async"></div><figcaption>Tatame Principal</figcaption></figure><figure><div class="ph"><img src="Treino_em_Andamento.webp" alt="Treinos em Andamento" loading="lazy" decoding="async"></div><figcaption>Treinos em Andamento</figcaption></figure></div>
+  </div>
+</section>
+
+<section id="depoimentos" aria-labelledby="t-dep" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv">Prova social</span>
+    <h2 id="t-dep" class="rv">Quem treina, fica</h2>
+    <div class="quotes">
+      <!-- SUBSTITUA pelos depoimentos reais dos alunos -->
+      <blockquote class="rv"><p>“Cheguei sem nunca ter treinado e fui muito bem recebido desde o primeiro dia.”</p><cite>Aluno do Studio</cite></blockquote>
+      <blockquote class="rv" style="--d:.1s"><p>“Ambiente respeitoso e técnica de verdade. Minha rotina mudou.”</p><cite>Aluna do Studio</cite></blockquote>
+      <blockquote class="rv" style="--d:.2s"><p>“Meu filho ganhou disciplina e confiança. Recomendo a todos os pais.”</p><cite>Responsável de aluno Kids</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="shop" aria-labelledby="t-shop" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv">Shop</span>
+    <h2 id="t-shop" class="rv">Produtos oficiais</h2>
+    <div class="cards c4"><a class="card rv" style="--d:0.0s" target="_blank" rel="noopener noreferrer" href="https://wa.me/5524988075539?text=Ol%C3%A1%21%20Quero%20comprar%3A%20Patches%20%28R%24%2030%2C00%29"><div class="ph"><img src="Patches.webp" alt="Patches Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>Patches</h3><p>Bordados de alta qualidade com o logo do Studio.</p><span class="go">R$ 30,00 · Pedir <i>→</i></span></div></a><a class="card rv" style="--d:0.08s" target="_blank" rel="noopener noreferrer" href="https://wa.me/5524988075539?text=Ol%C3%A1%21%20Quero%20comprar%3A%20Bon%C3%A9%20%28R%24%2050%2C00%29"><div class="ph"><img src="Boné.webp" alt="Boné Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>Boné</h3><p>Trucker premium com patch bordado.</p><span class="go">R$ 50,00 · Pedir <i>→</i></span></div></a><a class="card rv" style="--d:0.16s" target="_blank" rel="noopener noreferrer" href="https://wa.me/5524988075539?text=Ol%C3%A1%21%20Quero%20comprar%3A%20Camisa%20%28R%24%2060%2C00%29"><div class="ph"><img src="Camisa_Studio_George_Silva.webp" alt="Camisa oficial Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>Camisa</h3><p>Camisa oficial do Studio.</p><span class="go">R$ 60,00 · Pedir <i>→</i></span></div></a><a class="card rv" style="--d:0.24s" target="_blank" rel="noopener noreferrer" href="https://wa.me/5524988075539?text=Ol%C3%A1%21%20Quero%20comprar%3A%20Rash%20Guard%20%28R%24%2080%2C00%29"><div class="ph"><img src="Rash_guard.webp" alt="Rash Guard Studio George Silva" loading="lazy" decoding="async"></div><div class="tx"><h3>Rash Guard</h3><p>Compressão e conforto para o No-Gi.</p><span class="go">R$ 80,00 · Pedir <i>→</i></span></div></a></div>
+    <a class="cbjj rv" href="https://cbjj.com.br/events/calendar" target="_blank" rel="noopener noreferrer"><img src="Calendario_Oficial_CBJJ.webp" alt="Calendário oficial da CBJJ" width="1600" height="900" loading="lazy" decoding="async"></a>
+    <p class="fine rv" style="margin-top:.8rem">Toque no card para abrir o calendário oficial da CBJJ.</p>
+  </div>
+</section>
+
+<section id="contato" aria-labelledby="t-con" style="padding-top:0">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow rv">Aula experimental</span>
+      <h2 id="t-con" class="rv">Pronto para começar?</h2>
+      <p class="lead rv" style="margin-bottom:2rem">Agende um treino experimental e sinta na prática a energia do Studio. Fale direto com o Professor George pelo WhatsApp.</p>
+      <form id="lead" class="rv" novalidate>
+        <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label for="plano">Interesse</label>
+          <select id="plano" name="plano"><option>Jiu-Jítsu com kimono (adultos)</option><option>No-Gi</option><option>Jiu-Jítsu Kids</option><option>Ainda não sei / quero orientação</option></select></div>
+        <button class="btn" type="submit">Chamar no WhatsApp <span class="arr" aria-hidden="true">→</span></button>
+        <p class="fine" id="msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="info rv"><a class="contact-btn wa" href="https://wa.me/5524988075539?text=Ol%C3%A1%2C%20Professor%20George%21%20Quero%20agendar%20uma%20aula%20experimental." target="_blank" rel="noopener noreferrer"><img class="cb-img" src="George.webp" alt="Professor George" loading="lazy" decoding="async"><span class="cb-tx"><strong>Fale com o Professor George</strong><small>WhatsApp (24) 98807-5539</small></span><span class="cb-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 21l1.7-5A9 9 0 1112 21a9 9 0 01-4.3-1.1L3 21z"/><path fill="currentColor" d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg></span></a><a class="contact-btn " href="https://www.instagram.com/valfontainhanutri/" target="_blank" rel="noopener noreferrer"><img class="cb-img" src="Val.webp" alt="Nutricionista parceira Val" loading="lazy" decoding="async"><span class="cb-tx"><strong>Nutricionista parceira</strong><small>Instagram @valfontainhanutri</small></span><span class="cb-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.500" cy="6.500" r="1.200" fill="currentColor"/></svg></span></a><a class="contact-btn " href="https://www.instagram.com/studiogeorgesilva/" target="_blank" rel="noopener noreferrer"><span class="cb-img cb-logo"><img src="Studio_George_Silva_Logo_Sem_Fundo.png" alt="Logo do Studio George Silva" loading="lazy" decoding="async"></span><span class="cb-tx"><strong>Instagram do Studio</strong><small>@studiogeorgesilva</small></span><span class="cb-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.500" cy="6.500" r="1.200" fill="currentColor"/></svg></span></a><div class="location-card rv">
+      <div class="location-map">
+        <iframe title="Mapa interativo da localização do Studio George Silva" src="https://maps.google.com/maps?q=Rua%20Manoel%20Cabral%20de%20Mello%2C%20658%2C%20Bairro%20Del%C3%ADcia%2C%20Areal%2C%20RJ&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <span class="map-label">MAPA INTERATIVO</span>
+      </div>
+      <a class="location-visual" href="https://www.google.com/maps/@-22.243221,-43.1035094,3a,75y,204.28h,82.99t/data=!3m7!1e1!3m5!1sKA7L-DX1023fEGdQz6GB9Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.0073323618912156%26panoid%3DKA7L-DX1023fEGdQz6GB9Q%26yaw%3D204.27728769941893!7i16384!8i8192?entry=ttu&amp;g_ep=EgoyMDI2MDEyNS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" target="_blank" rel="noopener noreferrer" aria-label="Abrir localização do Studio George Silva no Google Maps Street View">
+        <img src="Localização fundo.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <span class="location-details"><span class="location-kicker">ONDE FICA</span><strong>Studio George Silva</strong><small>Rua Manoel Cabral de Mello, 658<br>Bairro Delícia, Areal–RJ</small><span class="location-route">Ver localização <span aria-hidden="true">→</span></span></span>
+      </a>
+    </div></div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="t-fim" style="padding-top:0">
+  <div class="wrap">
+    <h2 id="t-fim" class="rv">O primeiro passo é no tatame</h2>
+    <p class="lead rv">Nossa equipe está pronta para receber você em um ambiente sério e organizado.</p>
+    <a class="btn rv" href="https://wa.me/5524988075539?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20aula%20experimental" target="_blank" rel="noopener noreferrer">Agendar agora <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Studio George Silva. Todos os direitos reservados.</span>
+    <span><a href="https://www.instagram.com/cbyte_tech/" target="_blank" rel="noopener noreferrer">Site desenvolvido por CByte Tech</a></span>
+  </div>
+</footer>
+<div class="sticky" id="sticky"><a class="btn" href="#contato">Agendar aula experimental</a></div>
+<dialog id="lb" aria-label="Imagem ampliada"><img alt=""></dialog>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  var header=$('#top'),prog=$('#progress'),sticky=$('#sticky');
+  function onScroll(){var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;header.classList.toggle('solid',y>40);prog.style.transform='scaleX('+(h>0?y/h:0)+')';sticky.classList.toggle('show',y>innerHeight*.7)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  $$('.rv').forEach(function(el){io.observe(el)});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);var el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(tick)})(t0)})},{threshold:.6});
+  $$('[data-count]').forEach(function(el){cio.observe(el)});
+  var hero=$('.hero'),glow=$('#glow');
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();glow.style.setProperty('--x',(e.clientX-r.left)+'px');glow.style.setProperty('--y',(e.clientY-r.top)+'px')});
+  $$('[data-plan]').forEach(function(a){a.addEventListener('click',function(){var s=$('#plano');$$('option',s).forEach(function(o){if(o.textContent===a.dataset.plan)s.value=o.textContent})})});
+  var cmp=$('#cmp'),cmpHandle=cmp.querySelector('.cmp-handle');
+  function setCmpPosition(value){value=Math.max(5,Math.min(95,Math.round(value)));cmp.style.setProperty('--p',value+'%');cmpHandle.setAttribute('aria-valuenow',value)}
+  cmpHandle.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();cmpHandle.setPointerCapture(e.pointerId);cmpHandle.classList.add('is-dragging')});
+  cmpHandle.addEventListener('pointermove',function(e){if(!cmpHandle.hasPointerCapture(e.pointerId))return;var r=cmp.getBoundingClientRect();setCmpPosition((e.clientX-r.left)/r.width*100)});
+  function stopCmpDrag(e){if(cmpHandle.hasPointerCapture(e.pointerId))cmpHandle.releasePointerCapture(e.pointerId);cmpHandle.classList.remove('is-dragging')}
+  cmpHandle.addEventListener('pointerup',stopCmpDrag);cmpHandle.addEventListener('pointercancel',stopCmpDrag);
+  cmpHandle.addEventListener('keydown',function(e){var v=+cmpHandle.getAttribute('aria-valuenow'),d=e.shiftKey?10:2;if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();setCmpPosition(v-d)}else if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();setCmpPosition(v+d)}else if(e.key==='Home'){e.preventDefault();setCmpPosition(5)}else if(e.key==='End'){e.preventDefault();setCmpPosition(95)}});
+  var KM={Branco:'Kimono_Branco.webp',Azul:'Kimono_Azul.webp',Preto:'Kimono_Preto.webp'};
+  function setImg(img,name){img.classList.add('sw');window.__resolve(KM[name],function(u){setTimeout(function(){img.removeAttribute('loading');img.src=u;img.alt='Kimono '+name.toLowerCase();img.classList.remove('sw')},180)})}
+  function fitRatio(){var i=$('#cmpL');if(i.naturalWidth>0)cmp.style.aspectRatio=i.naturalWidth+'/'+i.naturalHeight}
+  $('#cmpL').addEventListener('load',fitRatio);$('#cmpR').addEventListener('load',fitRatio);fitRatio();
+  $$('.chip').forEach(function(b){b.addEventListener('click',function(){
+    $$('.chip').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false')});
+    b.classList.add('on');b.setAttribute('aria-selected','true');
+    setImg($('#cmpL'),b.dataset.l);setImg($('#cmpR'),b.dataset.r);
+    $('#lbL').textContent=b.dataset.l;$('#lbR').textContent=b.dataset.r;
+    setCmpPosition(50);
+  })});
+  /* Remove o fundo liso das fotos da camisa e da rash guard (só pinta o que toca a borda da foto). Se o navegador bloquear o canvas, mantém a foto original. */
+  function cutout(img){
+    if(img.__cut||/^data:/.test(img.src)||!img.naturalWidth)return;
+    try{
+      var sc=Math.min(1,900/img.naturalWidth),w=Math.round(img.naturalWidth*sc),hh=Math.round(img.naturalHeight*sc);
+      var cv=document.createElement('canvas');cv.width=w;cv.height=hh;var cx=cv.getContext('2d');cx.drawImage(img,0,0,w,hh);
+      var id=cx.getImageData(0,0,w,hh),d=id.data,seen=new Uint8Array(w*hh),st=[],removed=0;
+      var seeds=[0,w-1,(hh-1)*w,hh*w-1];
+      seeds.forEach(function(s){if(!seen[s]){seen[s]=1;st.push(s)}});
+      var ref=seeds.map(function(s){return [d[s*4],d[s*4+1],d[s*4+2]]});
+      var near=function(a,b,t){return Math.abs(d[a]-d[b])<=t&&Math.abs(d[a+1]-d[b+1])<=t&&Math.abs(d[a+2]-d[b+2])<=t};
+      var origin=new Int32Array(w*hh).fill(-1);seeds.forEach(function(s,i){origin[s]=s});
+      while(st.length){
+        var s=st.pop(),x=s%w,y=(s/w)|0,o=origin[s];d[s*4+3]=0;removed++;
+        [[x-1,y],[x+1,y],[x,y-1],[x,y+1]].forEach(function(n){
+          if(n[0]<0||n[1]<0||n[0]>=w||n[1]>=hh)return;var k=n[1]*w+n[0];
+          if(seen[k])return;
+          if(near(s*4,k*4,4)&&near(o*4,k*4,34)){seen[k]=1;origin[k]=o;st.push(k)}
+        });
+      }
+      var frac=removed/(w*hh);
+      if(frac<.2||frac>.93)return;
+      cx.putImageData(id,0,0);img.__cut=1;img.src=cv.toDataURL('image/png');img.parentNode.classList.add('cut');
+    }catch(e){/* canvas bloqueado (ex.: arquivo aberto direto do disco): mantém a foto original */}
+  }
+  $$('.card[href*="Camisa"] .ph img,.card[href*="Rash"] .ph img').forEach(function(i){
+    i.addEventListener('load',function(){cutout(i)});if(i.complete)cutout(i);
+  });
+  var lb=$('#lb');
+  document.addEventListener('click',function(e){var i=e.target.closest('.ph img');if(!i||i.closest('a')||!lb.showModal)return;$('img',lb).src=i.src;$('img',lb).alt=i.alt;lb.showModal()});
+  lb.addEventListener('click',function(){lb.close()});
+  $('#lead').addEventListener('submit',function(e){e.preventDefault();var n=$('#nome').value.trim(),p=$('#plano').value,m=$('#msg');
+    if(!n){m.textContent='Informe seu nome para continuar.';$('#nome').focus();return}
+    m.textContent='Abrindo o WhatsApp…';
+    window.open('https://wa.me/5524988075539?text='+encodeURIComponent('Olá, sou '+n+'. Quero agendar uma aula experimental de '+p+'.'),'_blank','noopener')});
+})();
+
+</script>
+<script id="hero-logo-loop">
+(function(){
+  var logo=document.querySelector('.hero-logo');
+  var content=document.querySelector('.hero-in');
+  var shine=document.getElementById('sgs-hero-sheen-motion');
+  if(content&&content.animate){
+    content.animate([
+      {transform:'translateY(0)'},
+      {transform:'translateY(-7px)'},
+      {transform:'translateY(0)'}
+    ],{duration:4800,easing:'ease-in-out',iterations:Infinity});
+  }
+  if(logo&&logo.animate){
+    logo.animate([
+      {filter:'drop-shadow(0 0 0 rgba(255,255,255,0))'},
+      {filter:'drop-shadow(0 0 10px rgba(255,255,255,.14))'},
+      {filter:'drop-shadow(0 0 0 rgba(255,255,255,0))'}
+    ],{duration:4800,easing:'ease-in-out',iterations:Infinity});
+  }
+  if(shine&&shine.beginElement)setTimeout(function(){shine.beginElement()},300);
+})();
+</script>
+</body>
+</html>

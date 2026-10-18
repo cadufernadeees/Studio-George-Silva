@@ -153,14 +153,14 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) header.solid .logo img{filter:brightness(0)}}
 .intro-active,.intro-active body{overflow:hidden}
 .intro{position:fixed;inset:0;z-index:1000;background:#050506;display:grid;place-items:center;pointer-events:auto;opacity:1;visibility:visible;transition:opacity .75s var(--ease),visibility .75s;isolation:isolate;overflow:hidden}
-.intro::before{content:"";position:absolute;inset:-25%;z-index:-1;background:radial-gradient(ellipse at center,rgba(211,47,47,.16),transparent 48%);animation:introAura 3s ease-in-out infinite alternate}
-.intro-logo-shell{position:relative;width:min(92vw,1100px);aspect-ratio:2047/1366;display:grid;place-items:center}
-.intro-logo-shell img{display:block;width:100%;height:auto;mix-blend-mode:screen;animation:introAssemble 1.35s cubic-bezier(.16,1,.3,1) both,introGlow 2.4s 1.35s ease-in-out infinite alternate}
+.intro::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(255,255,255,.055),transparent 46%);animation:introAura 5s ease-in-out infinite alternate}
+.intro-logo-shell{position:relative;width:min(88vw,1100px);aspect-ratio:1670/942;display:grid;place-items:center;opacity:0;animation:introStage 1.1s cubic-bezier(.16,1,.3,1) .08s forwards}
+.intro-logo-shell img{display:block;width:100%;height:auto;mix-blend-mode:screen;animation:introAssemble 1.8s cubic-bezier(.16,1,.3,1) both}
 .intro.is-exiting{opacity:0;visibility:hidden;pointer-events:none}
-@keyframes introAssemble{0%{opacity:0;transform:scale(.94);filter:blur(12px) brightness(1.8);clip-path:inset(0 50%)}65%{opacity:1;transform:scale(1.015);filter:blur(0) brightness(1.3);clip-path:inset(0 3%)}100%{opacity:1;transform:scale(1);filter:none;clip-path:inset(0)}}
-@keyframes introGlow{from{filter:brightness(1)}to{filter:brightness(1.12)}}
+@keyframes introStage{0%{opacity:0;transform:translateY(16px) scale(.97);filter:blur(8px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes introAssemble{0%{opacity:.25;transform:scale(.94);filter:blur(8px) brightness(1.35);clip-path:inset(0 48%)}55%{opacity:1;transform:scale(1.012);filter:blur(0) brightness(1.1);clip-path:inset(0 0)}78%{transform:scale(.998)}100%{transform:scale(1);filter:none;clip-path:inset(0)}}
 @keyframes introAura{from{opacity:.55;transform:scale(.92)}to{opacity:1;transform:scale(1.08)}}
-@media(prefers-reduced-motion:reduce){.intro-logo-shell img,.intro::before{animation:none}.intro.is-exiting{transition-duration:.2s}}
+@media(prefers-reduced-motion:reduce){.intro-logo-shell,.intro-logo-shell img,.intro::before{animation:none;opacity:1;transform:none;filter:none}.intro.is-exiting{transition-duration:.2s}}
 .hero-bg{position:absolute;inset:0;background:url('Hero.webp') center 68%/cover no-repeat;filter:grayscale(.35);transform:none;animation:none}
 @media(max-width:819px){.hero-bg{background-image:url('George-hero.webp');background-position:center center;background-size:100% auto;background-color:#080809;transform:none;animation:none;filter:grayscale(.18)}.hero-bg::after{background:linear-gradient(180deg,rgba(8,8,9,.38),rgba(8,8,9,.48) 48%,rgba(8,8,9,.9) 100%),radial-gradient(ellipse at 78% 58%,rgba(145,28,28,.2),transparent 52%)}}
 .ph img[data-missing]{opacity:0}

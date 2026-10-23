@@ -170,6 +170,18 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 @media(prefers-reduced-motion:reduce){.intro-logo-shell,.intro-logo-shell img,.intro::before{animation:none;opacity:1;transform:none;filter:none}.intro.is-exiting{transition-duration:.2s}}
 .hero-bg{position:absolute;inset:0;background:url('Hero.webp') center 68%/cover no-repeat;filter:grayscale(.35);transform:none;animation:none}
 @media(max-width:819px){.hero-bg{background-image:url('George-hero.webp');background-position:center center;background-size:100% auto;background-color:#080809;transform:none;animation:none;filter:grayscale(.18)}.hero-bg::after{background:linear-gradient(180deg,rgba(8,8,9,.38),rgba(8,8,9,.48) 48%,rgba(8,8,9,.9) 100%),radial-gradient(ellipse at 78% 58%,rgba(145,28,28,.2),transparent 52%)}}
+@media(max-width:819px){
+  .hero{min-height:100svh;padding:6.25rem 0 3.5rem}
+  .hero-bg{background-position:center bottom;filter:grayscale(.35) brightness(.58)}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(8,8,9,.82) 0%,rgba(8,8,9,.84) 48%,rgba(8,8,9,.5) 78%,rgba(8,8,9,.9) 100%)}
+  .hero-in{width:min(100% - 2rem,30rem)}
+  .hero-logo{width:clamp(112px,30vw,148px);margin-bottom:.75rem}
+  .hero h1{font-size:clamp(2.6rem,10.5vw,3.8rem);line-height:.98;margin-bottom:1rem}
+  .hero .lead{max-width:36ch;font-size:.96rem;line-height:1.55;margin-bottom:1.4rem}
+  .cta-row{width:100%;flex-direction:column;align-items:center;gap:.55rem}
+  .cta-row .btn{width:min(100%,21rem);min-height:49px;padding:.75rem 1.1rem}
+  .glow,.belt,.scroll,header .bar>.btn{display:none}
+}
 .ph img[data-missing]{opacity:0}
 .ph{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/3;background:var(--surface)}
 .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) brightness(.88);transition:transform .9s var(--ease),filter .6s;cursor:zoom-in}

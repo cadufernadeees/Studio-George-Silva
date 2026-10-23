@@ -66,6 +66,18 @@ nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;
 nav a:hover{color:var(--text)}nav a:hover::after{width:100%}
 .bar .btn{min-height:42px;padding:.5rem 1.2rem;font-size:.75rem}
 @media(min-width:820px){nav{display:flex}}
+.menu-toggle{display:none}
+@media(max-width:819px){
+  .menu-toggle{display:grid;place-content:center;gap:5px;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:color-mix(in srgb,var(--surface) 72%,transparent);color:var(--text);cursor:pointer}
+  .menu-toggle span{display:block;width:18px;height:2px;border-radius:2px;background:#f2ad3b;transition:transform .25s,opacity .2s}
+  .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  header nav{display:none;position:absolute;top:calc(100% + .45rem);left:1rem;right:1rem;z-index:55;gap:0;padding:.45rem;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--bg) 94%,transparent);box-shadow:0 18px 40px rgba(0,0,0,.35);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  header.menu-open nav{display:grid}
+  header nav a{padding:.8rem 1rem;border-radius:12px;color:var(--text);font-weight:500}
+  header nav a+a{border-top:1px solid var(--line)}
+  header nav a::after{display:none}
+}
 #progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:60}
 
 /* hero */
@@ -340,8 +352,9 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
 <header id="top">
   <div class="wrap bar">
     <a class="logo" href="#inicio" aria-label="Voltar ao topo do site"><img src="Studio_George_Silva_Logo_Sem_Fundo.png" alt="Logo do Studio George Silva"></a>
-    <nav aria-label="Navegação principal">
-      <a href="#beneficios">Benefícios</a><a href="#aulas">Aulas</a><a href="#studio">O Studio</a><a href="#depoimentos">Alunos</a><a href="#shop">Shop</a><a href="#contato">Contato</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+    <nav id="primary-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a><a href="#beneficios">Benefícios</a><a href="#aulas">Aulas</a><a href="#studio">O Studio</a><a href="#depoimentos">Alunos</a><a href="#shop">Shop</a><a href="#contato">Contato</a>
     </nav>
     <a class="btn" href="#contato">Aula grátis</a>
   </div>
@@ -527,6 +540,11 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
   var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
   var header=$('#top'),prog=$('#progress'),sticky=$('#sticky');
   $('.logo').addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});if(location.hash!=='#inicio')history.replaceState(null,'','#inicio')});
+  var menuButton=$('.menu-toggle'),mainNav=$('#primary-nav');
+  function closeMenu(){header.classList.remove('menu-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Abrir menu')}
+  menuButton.addEventListener('click',function(){var opening=menuButton.getAttribute('aria-expanded')!=='true';header.classList.toggle('menu-open',opening);menuButton.setAttribute('aria-expanded',String(opening));menuButton.setAttribute('aria-label',opening?'Fechar menu':'Abrir menu')});
+  mainNav.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
   function onScroll(){var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;header.classList.toggle('solid',y>40);prog.style.transform='scaleX('+(h>0?y/h:0)+')';sticky.classList.toggle('show',y>innerHeight*.7)}
   addEventListener('scroll',onScroll,{passive:true});onScroll();
   var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('in',e.isIntersecting)})},{threshold:.08,rootMargin:'0px 0px -6% 0px'});

@@ -497,7 +497,7 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
       <h2 id="t-con" class="rv">Pronto para começar?</h2>
       <p class="lead rv" style="margin-bottom:2rem">Agende um treino experimental e sinta na prática a energia do Studio. Fale direto com o Professor George pelo WhatsApp.</p>
       <form id="lead" class="rv" novalidate>
-        <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label id="nome-label" for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required></div>
         <div class="field"><label for="plano">Interesse</label>
           <select id="plano" name="plano"><option>Jiu-Jítsu com kimono (adultos)</option><option>No-Gi</option><option>Jiu-Jítsu Kids</option><option>Ainda não sei / quero orientação</option></select></div>
         <button class="btn" type="submit">Chamar no WhatsApp <span class="arr" aria-hidden="true">→</span></button>
@@ -553,7 +553,7 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
   $$('[data-count]').forEach(function(el){cio.observe(el)});
   var hero=$('.hero'),glow=$('#glow');
   hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();glow.style.setProperty('--x',(e.clientX-r.left)+'px');glow.style.setProperty('--y',(e.clientY-r.top)+'px')});
-  $$('[data-plan]').forEach(function(a){a.addEventListener('click',function(){var s=$('#plano');$$('option',s).forEach(function(o){if(o.textContent===a.dataset.plan)s.value=o.textContent})})});
+  $$('[data-plan]').forEach(function(a){a.addEventListener('click',function(){var s=$('#plano');$$('option',s).forEach(function(o){if(o.textContent===a.dataset.plan){s.value=o.textContent;s.dispatchEvent(new Event('change'))}})})});
   var cmp=$('#cmp'),cmpHandle=cmp.querySelector('.cmp-handle');
   function setCmpPosition(value){value=Math.max(5,Math.min(95,Math.round(value)));cmp.style.setProperty('--p',value+'%');cmpHandle.setAttribute('aria-valuenow',value)}
   cmpHandle.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();cmpHandle.setPointerCapture(e.pointerId);cmpHandle.classList.add('is-dragging')});
@@ -616,10 +616,14 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
   var lb=$('#lb');
   document.addEventListener('click',function(e){var i=e.target.closest('.ph img,.hist img');if(!i||!lb.showModal)return;e.preventDefault();e.stopPropagation();$('img',lb).src=i.src;$('img',lb).alt=i.alt;lb.showModal()});
   lb.addEventListener('click',function(){lb.close()});
-  $('#lead').addEventListener('submit',function(e){e.preventDefault();var n=$('#nome').value.trim(),p=$('#plano').value,m=$('#msg');
-    if(!n){m.textContent='Informe seu nome para continuar.';$('#nome').focus();return}
+  var leadName=$('#nome'),leadNameLabel=$('#nome-label'),leadPlan=$('#plano');
+  function updateLeadName(){var kids=leadPlan.value==='Jiu-Jítsu Kids';leadNameLabel.textContent=kids?'Nome do aluno(a)':'Seu nome';leadName.autocomplete=kids?'off':'name'}
+  leadPlan.addEventListener('change',updateLeadName);updateLeadName();
+  $('#lead').addEventListener('submit',function(e){e.preventDefault();var n=leadName.value.trim(),p=leadPlan.value,m=$('#msg'),kids=p==='Jiu-Jítsu Kids';
+    if(!n){m.textContent=kids?'Informe o nome do aluno para continuar.':'Informe seu nome para continuar.';leadName.focus();return}
     m.textContent='Abrindo o WhatsApp…';
-    window.open('https://wa.me/5524988075539?text='+encodeURIComponent('Olá, sou '+n+'. Quero agendar uma aula experimental de '+p+'.'),'_blank','noopener')});
+    var message=kids?'Olá! Sou responsável por '+n+' e gostaria de agendar uma aula experimental de Jiu-Jítsu Kids.':'Olá, sou '+n+'. Quero agendar uma aula experimental de '+p+'.';
+    window.open('https://wa.me/5524988075539?text='+encodeURIComponent(message),'_blank','noopener')});
 })();
 
 </script>

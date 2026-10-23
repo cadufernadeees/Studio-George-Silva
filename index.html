@@ -250,7 +250,7 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
 .card[href*="Rash"] .ph{background:#fff}
 .card[href*="Camisa"] .ph img,.card[href*="Rash"] .ph img{object-fit:contain}
 .card[href*="Camisa"] .ph.cut,.card[href*="Rash"] .ph.cut{background:radial-gradient(circle at 50% 42%,#5d5d66,#2a2a2f 78%)}
-.ph.cut img{filter:drop-shadow(0 14px 16px rgba(0,0,0,.45))!important}
+.ph.cut img{filter:none!important}
 .strip:not(.g3) figure:first-child{margin-left:auto}
 .strip:not(.g3) figure:last-child{margin-right:auto}
 /* Card de localização: mapa interativo e arte de localização */
@@ -560,6 +560,19 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
           if(seen[k])return;
           if(near(s*4,k*4,4)&&near(o*4,k*4,34)){seen[k]=1;origin[k]=o;st.push(k)}
         });
+      }
+      if(img.closest('.card[href*="Rash"]')){
+        /* Limpa a sombra clara solta sob a peça e os pixels brancos contaminados na borda do recorte. */
+        for(var sy=Math.floor(hh*.9);sy<hh;sy++)for(var sx=Math.floor(w*.2);sx<Math.ceil(w*.8);sx++){
+          var si=(sy*w+sx)*4,lum=(d[si]+d[si+1]+d[si+2])/3;
+          if(d[si+3]&&lum>125)d[si+3]=0;
+        }
+        for(var pass=0;pass<2;pass++)for(var ey=1;ey<hh-1;ey++)for(var ex=1;ex<w-1;ex++){
+          var ei=(ey*w+ex)*4;if(!d[ei+3])continue;
+          var bright=(d[ei]+d[ei+1]+d[ei+2])/3;
+          if(bright<175)continue;
+          if(!d[ei-4+3]||!d[ei+4+3]||!d[ei-w*4+3]||!d[ei+w*4+3])d[ei+3]=0;
+        }
       }
       var frac=removed/(w*hh);
       if(frac<.2||frac>.93)return;

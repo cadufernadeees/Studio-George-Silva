@@ -145,6 +145,14 @@ blockquote p{color:var(--text);margin-bottom:1.2rem}
 blockquote cite a{color:var(--soft);text-decoration:none}blockquote cite a:hover{color:var(--accent)}
 cite{font-style:normal;font-size:.85rem;color:var(--soft)}
 @media(min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.google-review{display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-top:2rem;padding:clamp(1.4rem,3vw,2.4rem);border:1px solid var(--line);border-radius:20px;background:linear-gradient(120deg,var(--surface),var(--bg));}
+.google-review-copy{max-width:650px}
+.google-review-copy h3{font:700 clamp(1.5rem,3vw,2rem)/1.1 var(--f-head);margin-bottom:.6rem}
+.google-review-copy p{color:var(--soft)}
+.google-review-link{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;flex:0 0 auto;min-height:50px;padding:.8rem 1.25rem;border:1px solid var(--line);border-radius:999px;color:var(--text);text-decoration:none;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:transform .45s var(--ease),border-color .35s,color .35s,background .35s}
+.google-review-link:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.google-review-link svg{width:20px;height:20px;flex:0 0 auto}
+@media(max-width:640px){.google-review{align-items:flex-start;flex-direction:column;gap:1.2rem}.google-review-link{width:100%}}
 
 /* contato */
 .contact{display:grid;gap:3rem}
@@ -508,6 +516,16 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
       <blockquote class="rv"><p>“Orgulho de ser um dos alunos do nosso tio ge 💕💕 Melhor time!!”</p><cite><a href="https://www.instagram.com/pedroguimaraes.nutri/" target="_blank" rel="noopener noreferrer">@pedroguimaraes.nutri</a></cite></blockquote>
       <blockquote class="rv" style="--d:.1s"><p>“Um privilégio fazer parte dessa história!! 💗”</p><cite><a href="https://www.instagram.com/rafaeln.souza/" target="_blank" rel="noopener noreferrer">@rafaeln.souza</a></cite></blockquote>
       <blockquote class="rv" style="--d:.2s"><p>“Além do Studio formar faixas pretas, formam pessoas melhores! 🔥 🥋”</p><cite><a href="https://www.instagram.com/cadu_fernandeees/" target="_blank" rel="noopener noreferrer">@cadu_fernandeees</a></cite></blockquote>
+    </div>
+    <div class="google-review rv" aria-label="Avalie o Studio George Silva no Google">
+      <div class="google-review-copy">
+        <h3>Treinou com a gente?</h3>
+        <p>Sua avaliação no Google ajuda outras pessoas a conhecerem o Studio George Silva.</p>
+      </div>
+      <a class="google-review-link" href="https://g.page/r/CdLKKoYkWw4JEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Escrever uma avaliação do Studio George Silva no Google">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-15z"/><path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5.1c-1.8 1.2-4 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44z"/><path fill="#FBBC05" d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.3H5.8a20 20 0 0 0 0 17.8l6.8-5.3z"/><path fill="#EA4335" d="M24 12c3 0 5.7 1 7.8 3.1l5.8-5.8A19.4 19.4 0 0 0 24 4 20 20 0 0 0 5.8 15.1l6.8 5.3C14.2 15.6 18.7 12 24 12z"/></svg>
+        Avaliar no Google <span aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>

@@ -220,7 +220,7 @@ figcaption{font-size:.8rem;color:var(--soft);margin-top:.5rem}
 @media(min-width:820px){.feature{grid-template-columns:1fr 1fr;gap:3.5rem}.feature.rev .txt{order:2}}
 .hist{position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:grid;place-items:center;padding:2.5rem 1.5rem;text-align:center;margin-top:3rem;color:#f4f4f5}
 .hist img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.5) brightness(.4)}
-.hist img,.ph img{cursor:zoom-in}
+.hist img,.ph img,.brand-art img,.belts{cursor:zoom-in}
 .hist p{position:relative;max-width:60ch;color:#f4f4f5;font-size:1.1rem}
 .belts{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin-top:1rem}
 .cmp{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;max-width:520px;margin-top:1.2rem;--p:50%}
@@ -632,7 +632,7 @@ dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{max-width:94vw;max-height
     i.addEventListener('load',function(){cutout(i)});if(i.complete)cutout(i);
   });
   var lb=$('#lb');
-  document.addEventListener('click',function(e){var i=e.target.closest('.ph img,.hist img');if(!i||!lb.showModal)return;e.preventDefault();e.stopPropagation();$('img',lb).src=i.src;$('img',lb).alt=i.alt;lb.showModal()});
+  document.addEventListener('click',function(e){var i=e.target.closest('.ph img,.hist img,.brand-art img,.belts');if(!i||!lb.showModal)return;e.preventDefault();e.stopPropagation();$('img',lb).src=i.src;$('img',lb).alt=i.alt;lb.showModal()});
   lb.addEventListener('click',function(){lb.close()});
   var leadName=$('#nome'),leadNameLabel=$('#nome-label'),leadPlan=$('#plano');
   function updateLeadName(){var kids=leadPlan.value==='Jiu-Jítsu Kids';leadNameLabel.textContent=kids?'Nome do aluno(a)':'Seu nome';leadName.autocomplete=kids?'off':'name'}

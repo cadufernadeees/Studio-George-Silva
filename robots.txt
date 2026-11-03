@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cadufernadeees.github.io/Studio-George-Silva/sitemap.xml
